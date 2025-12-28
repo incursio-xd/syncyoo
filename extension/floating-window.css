@@ -1,0 +1,380 @@
+/* Floating Window Styles */
+#yt-sync-floating-window {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  background: rgba(15, 15, 25, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+#yt-sync-floating-window.minimized {
+  width: 200px;
+  height: auto;
+}
+
+/* Header */
+.yt-sync-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 12px 16px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.yt-sync-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.yt-sync-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.yt-sync-btn-minimize,
+.yt-sync-btn-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yt-sync-btn-minimize:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.yt-sync-btn-close:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+/* Content */
+.yt-sync-content {
+  padding: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.yt-sync-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.yt-sync-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.yt-sync-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* Room Setup */
+.yt-sync-room-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.yt-sync-room-section input[type="text"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.yt-sync-room-section input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #667eea;
+}
+
+.yt-sync-room-section input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.yt-sync-room-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.yt-sync-room-buttons button,
+#leave-room-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.yt-sync-room-buttons button:hover,
+#leave-room-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.yt-sync-room-buttons button:active,
+#leave-room-btn:active {
+  transform: translateY(0);
+}
+
+/* Room Info */
+.yt-sync-room-info {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.yt-sync-room-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.yt-sync-room-header strong {
+  color: #667eea;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+#copy-code-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#copy-code-btn:hover {
+  opacity: 1;
+}
+
+.yt-sync-users {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.yt-sync-user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.yt-sync-user {
+  background: rgba(102, 126, 234, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #a5b4fc;
+}
+
+/* Chat Section */
+.yt-sync-chat-section {
+  margin-bottom: 16px;
+}
+
+.yt-sync-chat-header {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.yt-sync-chat-messages {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.yt-sync-chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.yt-sync-chat-messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.yt-sync-chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.yt-sync-message {
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.yt-sync-message-user {
+  font-weight: 600;
+  color: #a5b4fc;
+  margin-right: 6px;
+}
+
+.yt-sync-message-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.yt-sync-system-message {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  background: transparent;
+  padding: 4px;
+}
+
+.yt-sync-chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+.yt-sync-chat-input input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.yt-sync-chat-input input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #667eea;
+}
+
+.yt-sync-chat-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#send-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#send-btn:hover {
+  transform: scale(1.05);
+}
+
+#send-btn:active {
+  transform: scale(0.95);
+}
+
+/* Status */
+.yt-sync-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
+#status-indicator {
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#status-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#leave-room-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Notifications */
+.yt-sync-notification {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(102, 126, 234, 0.95);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  max-width: 80%;
+  text-align: center;
+}
+
+.yt-sync-notification.error {
+  background: rgba(239, 68, 68, 0.95);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #yt-sync-floating-window {
+    width: 280px;
+    top: 10px;
+    right: 10px;
+  }
+}
